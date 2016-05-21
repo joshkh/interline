@@ -5,7 +5,12 @@
               [interline.subs]
               [interline.routes :as routes]
               [interline.views :as views]
-              [interline.config :as config]))
+              [interline.config :as config]
+              [interline.tools.toola :as toola]
+              [interline.tools.toolb :as toolb]
+              [interline.tools.toolc :as toolc]))
+
+(enable-console-print!)
 
 (when config/debug?
   (println "dev mode"))
@@ -17,4 +22,5 @@
 (defn ^:export init [] 
   (routes/app-routes)
   (re-frame/dispatch-sync [:initialize-db])
+  (re-frame/dispatch [:run-pipeline])
   (mount-root))

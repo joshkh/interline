@@ -7,6 +7,7 @@
                  [compojure "1.5.0"]
                  [ring "1.4.0"]
                  [prismatic/schema "1.1.1"]
+                 [org.clojure/core.async "0.2.374"]
                  [json-html "0.3.9"]]
 
   :min-lein-version "2.5.3"
@@ -38,7 +39,7 @@
                     :source-map-timestamp true}}
 
     {:id           "min"
-     :source-paths ["src/cljs"]
+     :source-paths ["src/cljs" "src/cljc"]
      :compiler     {:main            interline.core
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced
